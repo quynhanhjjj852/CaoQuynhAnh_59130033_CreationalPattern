@@ -37,10 +37,8 @@ public class bt1_main
         System.out.println("Chi tiết hóa đơn");
         for (CTHD x : hoaDon.cthd) 
         {
-            System.out.println("Tên sản phẩm: " + x.getTenSanPham() + "\n"
-            + "Số lượng: " + x.getSoLuong() + "\n"
-            + "Đơn giá: " + (int)x.getDonGia() + "\n"
-            + "Chiết khấu: " + x.getChietKhau() + "\n");
+            System.out.println("Tên sản phẩm: " + x.getTenSanPham() + "\n" + "Số lượng: " + x.getSoLuong() + "\n" + 
+                    "Đơn giá: " + (int)x.getDonGia() + "\n" + "Chiết khấu: " + x.getChietKhau() + "\n");
         }
     }
     
