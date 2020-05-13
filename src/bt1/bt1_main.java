@@ -24,12 +24,12 @@ public class bt1_main
         CTHD CTHD4 = new CTHD("USB",7,999000,0.5);
         
         HoaDon HD = new HoaDon.Builder()
-                .addHoaDonHeader(HDH)
-                .addCTHD(CTHD1)
-                .addCTHD(CTHD2)
-                .addCTHD(CTHD3)
-                .addCTHD(CTHD4)
-                .build();
+            .addHoaDonHeader(HDH)
+            .addCTHD(CTHD1)
+            .addCTHD(CTHD2)
+            .addCTHD(CTHD3)
+            .addCTHD(CTHD4)
+            .build();
         System.out.println(HD.toString());
     }
     
