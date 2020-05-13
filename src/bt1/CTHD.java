@@ -15,12 +15,12 @@ public class CTHD
     String tenSanPham;
     int soLuong;
     double donGia;
-    float chietKhau;
+    double chietKhau; 
 
     public CTHD() 
     {}
 
-    public CTHD(String tenSanPham, int soLuong, double donGia, float chietKhau) 
+    public CTHD(String tenSanPham, int soLuong, double donGia, double chietKhau) 
     {
         this.tenSanPham = tenSanPham;
         this.soLuong = soLuong;
@@ -37,35 +37,41 @@ public class CTHD
     {
         this.tenSanPham = tenSanPham;
     }
-    
-    public double getDonGia() 
-    {
-        return donGia;
-    }
-    
-    public void setDonGia(double donGia) 
-    {
-        this.donGia = donGia;
-    }
-    
+
     public int getSoLuong() 
     {
         return soLuong;
     }
-    
+
     public void setSoLuong(int soLuong) 
     {
         this.soLuong = soLuong;
     }
-    
-    public float getChietKhau() 
+
+    public double getDonGia() 
+    {
+        return donGia;
+    }
+
+    public void setDonGia(double donGia) 
+    {
+        this.donGia = donGia;
+    }
+
+    public double getChietKhau() 
     {
         return chietKhau;
     }
 
-    public void setChietKhau(float chietKhau) 
+    public void setChietKhau(double chietKhau) 
     {
         this.chietKhau = chietKhau;
+    }
+
+    @Override
+    public String toString() 
+    {
+        return "Chi tiết hóa đơn :" + "Tên sản phẩm: " + tenSanPham + ", Số lượng: " + soLuong + ", Đơn giá: " + donGia + ", Chiết khấu: " + chietKhau;
     }
     
 }
