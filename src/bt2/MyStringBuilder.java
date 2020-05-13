@@ -57,6 +57,6 @@ public class MyStringBuilder
     @Override
     public String toString() 
     {
-        return "My String = " + str;
+        return "Chuỗi của bạn: " + str;
     }
 }
