@@ -6,8 +6,7 @@
 package bt1;
 
 import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -15,30 +14,23 @@ import java.time.format.DateTimeFormatter;
  */
 public class bt1_main 
 {
-    public static LocalDate getDateFromString(String string, DateTimeFormatter format) 
-    {       
-        LocalDate date = LocalDate.parse(string, format);
-        return date; 
-    }  
-    
     public static void main(String[] args) throws ParseException 
-    {      
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");       
-        HoaDon hoaDon = new HoaDon.Builder()
-        .addHeader("HD001", "Hoàng Tuấn Kiên", getDateFromString("13/05/2020", format))
-        .addProduct("KeyBoard", 5, 5300000, 0.5F)
-        .build();
-     
-        System.out.println("Hóa Đơn");
-        System.out.println("Mã hóa đơn: " + hoaDon.header.getMaHoaDon() + "\n" + "Tên khách hàng: " + hoaDon.header.getTenKhachHang() + "\n" +
-        "Ngày bán: " + hoaDon.header.getNgayBan() + "\n");
+    {
+        HoaDonHeader HDH = new HoaDonHeader
+        ("HD001", new SimpleDateFormat("dd/mm/yyyy").parse("13/05/2020"),"Hoàng Tuấn Kiên");
+        CTHD CTHD1 = new CTHD("Keyboard",2,1000000,0.2);
+        CTHD CTHD2 = new CTHD("Headphone",2,2500000,0.3);
+        CTHD CTHD3 = new CTHD("Laptop",1,15000000,0.5);
+        CTHD CTHD4 = new CTHD("USB",7,999000,0.5);
         
-        System.out.println("Chi tiết hóa đơn");
-        for (CTHD x : hoaDon.cthd) 
-        {
-            System.out.println("Tên sản phẩm: " + x.getTenSanPham() + "\n" + "Số lượng: " + x.getSoLuong() + "\n" + 
-                    "Đơn giá: " + (int)x.getDonGia() + "\n" + "Chiết khấu: " + x.getChietKhau() + "\n");
-        }
+        HoaDon HD = new HoaDon.Builder()
+                .addHoaDonHeader(HDH)
+                .addCTHD(CTHD1)
+                .addCTHD(CTHD2)
+                .addCTHD(CTHD3)
+                .addCTHD(CTHD4)
+                .build();
+        System.out.println(HD.toString());
     }
     
 }
