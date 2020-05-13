@@ -30,8 +30,7 @@ public class bt1_main
         .build();
      
         System.out.println("Hóa Đơn");
-        System.out.println("Mã hóa đơn: " + hoaDon.header.getMaHoaDon() + "\n" +
-        "Tên khách hàng: " + hoaDon.header.getTenKhachHang() + "\n" +
+        System.out.println("Mã hóa đơn: " + hoaDon.header.getMaHoaDon() + "\n" + "Tên khách hàng: " + hoaDon.header.getTenKhachHang() + "\n" +
         "Ngày bán: " + hoaDon.header.getNgayBan() + "\n");
         
         System.out.println("Chi tiết hóa đơn");
