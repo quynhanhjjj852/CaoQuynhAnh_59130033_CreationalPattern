@@ -9,6 +9,12 @@ package bt2;
  *
  * @author Asus
  */
-public class bt2_main {
-    
+public class bt2_main 
+{
+    public static void main(String[] args) 
+    {
+        MyStringBuilder str = new MyStringBuilder.Builder().addString("hello world \t").addBool(true).addFloat(5.0F).build();
+        System.out.println(str.toString());
+        System.out.println(str.getClass());
+    }
 }
