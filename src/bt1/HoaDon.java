@@ -54,7 +54,7 @@ public class HoaDon
         String s = HDH.toString();
         for(int i=0; i < DSCTHD.size(); i++)
         {
-            s += "\n"+DSCTHD.get(i).toString();
+            s += "\n" + DSCTHD.get(i).toString();
         }
         return s;
     }
