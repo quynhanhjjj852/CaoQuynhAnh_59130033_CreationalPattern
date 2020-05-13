@@ -5,7 +5,6 @@
  */
 package bt1;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -14,40 +13,50 @@ import java.util.ArrayList;
  */
 public class HoaDon 
 {   
-    HoaDonHeader header = new HoaDonHeader();
-    ArrayList<CTHD> cthd = new ArrayList<>();
-    
-    public static class Builder 
+    HoaDonHeader HDH;
+    ArrayList<CTHD> DSCTHD = new ArrayList<>();
+
+    public HoaDon(Builder builder) 
     {
-        HoaDonHeader header;
-        ArrayList<CTHD> cthd = new ArrayList<>();        
-        
+        this.HDH = builder.HDH;
+        this.DSCTHD = builder.DSCTHD;
+    }
+
+    public static class Builder
+    {
+        HoaDonHeader HDH;
+        ArrayList<CTHD> DSCTHD = new ArrayList<>();
+
         public Builder() 
-        {}   
+        {}
         
-        public Builder addHeader(String maHoaDon, String tenKhachHang, LocalDate ngayBan) 
+        public Builder addHoaDonHeader(HoaDonHeader HDH)
         {
-            this.header = new HoaDonHeader(maHoaDon, tenKhachHang, ngayBan);
-            return this;
-        }        
-        
-        public Builder addProduct(String tenSanPham, int soLuong, double donGia, float chietKhau) 
-        {
-            CTHD item = new CTHD(tenSanPham, soLuong, donGia, chietKhau);
-            this.cthd.add(item);
+            this.HDH = HDH;
             return this;
         }
         
-        public HoaDon build() 
+        public Builder addCTHD(CTHD cthd)
+        {
+            this.DSCTHD.add(cthd);
+            return this;
+        }
+        
+        public HoaDon build()
         {
             return new HoaDon(this);
         }
     }
-    
-    protected HoaDon (Builder builder) 
+
+    @Override
+    public String toString() 
     {
-        this.header = builder.header;
-        this.cthd = builder.cthd;
+        String s = HDH.toString();
+        for(int i=0; i < DSCTHD.size(); i++)
+        {
+            s += "\n"+DSCTHD.get(i).toString();
+        }
+        return s;
     }
     
 }
