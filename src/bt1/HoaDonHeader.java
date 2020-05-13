@@ -5,7 +5,7 @@
  */
 package bt1;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -13,26 +13,17 @@ import java.time.LocalDate;
  */
 public class HoaDonHeader 
 {
-    String maHoaDon, tenKhachHang;
-    LocalDate ngayBan;
+    String maHoaDon;
+    Date ngayBan;
+    String tenKhachHang;
 
     public HoaDonHeader() 
     {}
 
-    public HoaDonHeader(String maHoaDon, String tenKhachHang, LocalDate ngayBan) 
+    public HoaDonHeader(String maHoaDon, Date ngayBan, String tenKhachHang) 
     {
         this.maHoaDon = maHoaDon;
-        this.tenKhachHang = tenKhachHang;
         this.ngayBan = ngayBan;
-    }
-    
-    public String getTenKhachHang() 
-    {
-        return tenKhachHang;
-    }
-
-    public void setTenKhachHang(String tenKhachHang) 
-    {
         this.tenKhachHang = tenKhachHang;
     }
 
@@ -46,14 +37,30 @@ public class HoaDonHeader
         this.maHoaDon = maHoaDon;
     }
 
-    public LocalDate getNgayBan() 
+    public Date getNgayBan() 
     {
         return ngayBan;
     }
 
-    public void setNgayBan(LocalDate ngayBan) 
+    public void setNgayBan(Date ngayBan) 
     {
         this.ngayBan = ngayBan;
-    }  
+    }
+
+    public String getTenKhachHang() 
+    {
+        return tenKhachHang;
+    }
+
+    public void setTenKhachHang(String tenKhachHang) 
+    {
+        this.tenKhachHang = tenKhachHang;
+    }
+
+    @Override
+    public String toString() 
+    {
+        return "Hóa đơn:" + "\n" + "Mã hóa đơn: " + maHoaDon + "\n" + "Ngày Bán: " + ngayBan + "\n"+ "Tên khách hàng: " + tenKhachHang;
+    } 
     
 }
